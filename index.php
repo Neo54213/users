@@ -6,9 +6,18 @@ mysqli_set_charset($link, 'utf8');
 
 $query ="SELECT * FROM users";
 $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+
 if($result){
-    $row = mysqli_fetch_array($result, MYSQLI_NUM);
-    var_dump($row);
+    while(true){
+        $row = mysqli_fetch_array($result, MYSQLI_NUM);
+
+        if(!$row){
+            return;
+        }
+
+        var_dump($row);
+        echo "<br>";
+    }
 }
 
 mysqli_close($link);
