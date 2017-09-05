@@ -4,7 +4,9 @@
 }
 nav{
     float: left;
-    margin-left: 40px;
+    position: absolute;
+    top: 40px;
+    left: 40px;
 }
 table{
     position: absolute;
