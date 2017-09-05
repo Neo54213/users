@@ -5,15 +5,31 @@
 nav{
     float: left;
     position: absolute;
-    top: 40px;
     left: 40px;
+    top: 100px;
 }
 table{
-    position: absolute;
-    left: 480px;
-    top: 40px;
     border-collapse: collapse;
 }
-td{
+section{
+    position: absolute;
+    left: 300px;
+    top: 100px;
+}
+td, th{
     border: 1px solid black;
+    padding: 3px;
+}
+ul{
+    list-style-type: none;
+}
+h1{
+    margin-left: 50px;
+    margin-top: 20px;
+}
+#main-menu-list{
+    margin-top: 20px;
+}
+h2{
+    margin-bottom: 10px;
 }
