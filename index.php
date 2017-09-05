@@ -4,10 +4,18 @@ $id = $_GET['id'];
 <!doctype html>
 <html>
 <head>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Пользователи</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<p>
+<nav>
+    <ul>
+        <li><a href="index.php?id=sign_in">Вход</a></li>
+        <li><a href="index.php?id=add">Добавить пользователя</a></li>
+    </ul>
+</nav>
+<section>
 <?php
 require_once 'db_connection.php';
 
@@ -18,21 +26,15 @@ $query ="SELECT * FROM users";
 $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
 
 if($result){
-    while($row = mysqli_fetch_array($result, MYSQLI_NUM)){
-        var_dump($row);
+    for ($i = 0; $row = mysqli_fetch_array($result, MYSQLI_ASSOC); $i++) {
+        echo "$row";
         echo "<br>";
     }
 }
 
 mysqli_close($link);
 ?>
-</p>
-<ul>
-    <li><a href="index.php?id=sign_in">Вход</a></li>
-    <li><a href="index.php?id=add">Добавить пользователя</a></li>
-    <li><a href="index.php?id=users">Отобразить всех пользователей</a></li>
-    <li><a href="index.php?id=">Редактировать профиль</a></li>
-</ul>
+</section>
 <p>
     <?php
         require_once 'inc/routing.php';
