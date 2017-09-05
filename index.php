@@ -13,6 +13,7 @@ $id = $_GET['id'];
     <ul>
         <li><a href="index.php?id=sign_in">Вход</a></li>
         <li><a href="index.php?id=add">Добавить пользователя</a></li>
+        <li><a href="index.php?id=profile">Профиль</a></li>
     </ul>
 </nav>
 <section>
@@ -24,16 +25,22 @@ mysqli_set_charset($link, 'utf8');
 
 $query ="SELECT * FROM users";
 $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
-
+?>
+<table>
+<?php
 if($result){
-    for ($i = 0; $row = mysqli_fetch_array($result, MYSQLI_ASSOC); $i++) {
-        echo "$row";
-        echo "<br>";
+    while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+        echo "<tr>";
+        foreach ($row as $value) {
+            echo "<td>$value</td>";
+        }
+        echo "</tr>";
     }
 }
 
 mysqli_close($link);
 ?>
+</table>
 </section>
 <p>
     <?php
