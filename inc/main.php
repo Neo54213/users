@@ -1,5 +1,5 @@
 <h2>Список пользователей</h2>
-<table>
+<table class="table">
     <thead>
         <th>Логин</th><th>ФИО</th><th>Электронная почта</th><th>Права</th>
     </thead>
@@ -19,3 +19,4 @@ if($result){
 }
 ?>
 </table>
+<button id="plusUser">+</button>

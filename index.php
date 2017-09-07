@@ -17,21 +17,25 @@ mysqli_close($link);
 <html>
 <head>
     <title>Пользователи</title>
-    <link rel="stylesheet" href="main.css">
+    <!--link rel="stylesheet" href="main.css"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 </head>
 <body>
 <h1>Система управления пользователями</h1>
-<nav>
-    <h2>Главное меню</h2>
-    <ul id="main-menu-list">
-        <li><a href="index.php">Главная</a></li>
-        <li><a href="index.php?id=sign_in">Вход</a></li>
-        <li><a href="index.php?id=profile">Профиль</a></li>
-    </ul>
-</nav>
-<section>
-    <?php require_once 'inc/routing.php'; ?>
-</section>
-
+<div class="row">
+    <div class="col-md-2">
+        <nav>
+            <h2>Главное меню</h2>
+            <ul id="mainMenuList">
+                <li><a href="index.php">Главная</a></li>
+                <li><a href="index.php?id=sign_in">Вход</a></li>
+                <li><a href="index.php?id=profile">Профиль</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="col-md-4">
+        <?php require_once 'inc/routing.php'; ?>
+    </div>
+</div>
 </body>
 </html>
